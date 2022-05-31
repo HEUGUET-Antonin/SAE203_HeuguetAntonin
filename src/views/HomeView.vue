@@ -22,21 +22,22 @@
         <CardKhali></CardKhali>
       </div>
     </div>
-
-    <p
-      class="
-        flex
-        justify-center
-        uppercase
-        font-serif
-        text-black
-        mt-12
-        text-xl
-        hover:text-red-600
-      "
-    >
-      Tous les artistes
-    </p>
+    <RouterLink to="/artistes">
+      <p
+        class="
+          flex
+          justify-center
+          uppercase
+          font-serif
+          text-black
+          mt-12
+          text-xl
+          hover:text-red-600
+        "
+      >
+        Tous les artistes
+      </p>
+    </RouterLink>
     <h2 class="font-display text-3xl text-black flex justify-center mt-16">
       Tickets
     </h2>
@@ -47,7 +48,7 @@
     <p class="flex justify-center uppercase font-serif text-black mt-6 text-xl">
       Suivez l'actualité de NewFest
     </p>
-    <BarreNewsletter></BarreNewsletter>
+    <BarreNewsletter class="pb-12"></BarreNewsletter>
   </main>
 </template>
 
