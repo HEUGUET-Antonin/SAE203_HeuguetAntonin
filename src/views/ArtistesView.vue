@@ -5,7 +5,7 @@
   </div>
 
   <div class="grid grid-cols-3 justify-items-center mt-6">
-    <CardFeve class="mb-16"></CardFeve>
+    <RouterLink to="/LaFeve"><CardFeve class="mb-16"></CardFeve></RouterLink>
     <CardBushi class="mb-16"></CardBushi>
     <CardZamdane class="mb-16"></CardZamdane>
     <CardEdge class="mb-16"></CardEdge>

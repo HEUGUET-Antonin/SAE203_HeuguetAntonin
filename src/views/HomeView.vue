@@ -12,7 +12,7 @@
     </div>
     <div class="pt-4 pb-4">
       <div class="flex space-x-16 justify-center mb-20">
-        <CardFeve></CardFeve>
+        <RouterLink to="/LaFeve"><CardFeve></CardFeve></RouterLink>
         <CardBushi></CardBushi>
         <CardZamdane></CardZamdane>
       </div>

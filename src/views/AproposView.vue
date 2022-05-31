@@ -15,7 +15,9 @@
     <h2 class="font-display text-black text-3xl text-center mt-16">
       Reserve ton ticket dès maintenant !
     </h2>
-    <BoutonTickets class="ml-auto mr-auto mt-8"></BoutonTickets>
+    <div class="mt-8 pb-8 flex justify-center">
+      <BoutonTickets></BoutonTickets>
+    </div>
   </div>
 </template>
 <script>
