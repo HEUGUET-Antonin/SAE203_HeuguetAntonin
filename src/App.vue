@@ -10,13 +10,13 @@ import { RouterLink, RouterView } from "vue-router";
       /></RouterLink>
       <div class="block lg:hidden">
         <button
-          class="relative z-50 text-xl"
+          class="relative text-xl"
           aria-haspopup="true"
           aria-controls="menu"
           :aria-expanded="menuOuvert"
           @click="menuOuvert = !menuOuvert"
         >
-          <IconMenu></IconMenu>
+          <IconMenu class="z-50"></IconMenu>
         </button>
         <div
           id="menu"
@@ -29,16 +29,20 @@ import { RouterLink, RouterView } from "vue-router";
             text-black
             font-serif
             text-2xl
+            z-40
+            grid grid-cols-1
+            uppercase
+            pl-10
           "
           :class="{ 'translate-x-0': menuOuvert }"
         >
-          <RouterLink to="/" class="ml-6 mr-6">Accueil</RouterLink>
-          <RouterLink to="/programmation" class="ml-6 mr-6"
+          <RouterLink to="/" class="mt-40">Accueil</RouterLink>
+          <RouterLink to="/programmation " class="-mt-16"
             >Programmation</RouterLink
           >
-          <RouterLink to="/artistes" class="ml-6 mr-6">Artistes</RouterLink>
-          <RouterLink to="/apropos" class="ml-6 mr-6"> à propos</RouterLink>
-          <RouterLink to="/contact" class="ml-6 mr-6">Contact</RouterLink>
+          <RouterLink to="/artistes" class="-mt-24">Artistes</RouterLink>
+          <RouterLink to="/apropos" class="-mt-32"> à propos</RouterLink>
+          <RouterLink to="/contact" class="-mt-40">Contact</RouterLink>
         </div>
       </div>
 
