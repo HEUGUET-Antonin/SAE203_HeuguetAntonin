@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         'serif': ['DM Serif Display'],
         'display': ['Shrikhand'],
+      },
+      backgroundImage: {
+        'fond-footer': "url('src/assets/fond_footer.svg')",
+
       }
     },
   },

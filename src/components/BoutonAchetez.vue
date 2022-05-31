@@ -1,0 +1,16 @@
+<template>
+  <div
+    class="
+      flex
+      justify-center
+      items-center
+      w-32
+      h-10
+      border-2 border-black
+      bg-yellow-200
+      hover:bg-yellow-300
+    "
+  >
+    <p class="font-serif uppercase text-black text-xl">Achetez</p>
+  </div>
+</template>

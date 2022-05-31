@@ -2,8 +2,8 @@
   <div class="relative">
     <div class="z-10">
       <img
-        src="../../src/assets/Bushi.png"
-        alt="Bushi"
+        src="../../src/assets/Edge.png"
+        alt="Edge"
         class="border-2 border-black"
       />
     </div>
@@ -21,7 +21,7 @@
         -mt-4
       "
     >
-      <p class="font-serif text-black uppercase text-xl z">Bu$hi</p>
+      <p class="font-serif text-black uppercase text-xl z">Edge</p>
     </div>
   </div>
 </template>
