@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from "vue-router";
   <header class="pt-6 pl-8 pr-8 pb-8 bg-yellow-50 text-black">
     <div class="flex justify-between items-center">
       <RouterLink to="/"
-        ><img src="src\assets\Logo.png" alt="Logo NewFest"
+        ><img src="src\assets\NewFest.png" alt="Logo NewFest"
       /></RouterLink>
       <div class="block lg:hidden">
         <button
