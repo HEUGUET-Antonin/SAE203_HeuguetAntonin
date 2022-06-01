@@ -11,6 +11,8 @@
           h-7
           pl-2
           sm:w-[394px]
+          lg:w-[480px]
+          xl:w-[700px]
         "
         placeholder="Votre adresse mail"
       />
