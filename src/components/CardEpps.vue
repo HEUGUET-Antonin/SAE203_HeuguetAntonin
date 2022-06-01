@@ -1,5 +1,5 @@
 <template>
-  <div class="grid justify-items-center">
+  <div>
     <div class="z-10">
       <img
         src="../../src/assets/BenjaminEpps.png"
@@ -10,9 +10,10 @@
     <div
       class="
         flex
-        justify-center
+        ml-auto
+        mr-auto
         bg-red-600
-        w-32
+        w-28
         border-2 border-black
         z-20
         -mt-4

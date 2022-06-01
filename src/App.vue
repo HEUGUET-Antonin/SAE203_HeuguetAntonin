@@ -90,10 +90,10 @@ import { RouterLink, RouterView } from "vue-router";
       flex
       justify-center
       items-center
-      space-x-28
-      sm:space-x-60
+      gap-28
+      sm:gap-60
       lg:space-x-96
-      xl:space-x-xl
+      xl:gap-xl
       pt-6
       pb-12
       bg-yellow-50 bg-fond-footer bg-cover

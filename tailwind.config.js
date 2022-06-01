@@ -18,7 +18,7 @@ module.exports = {
 
       },
 
-      space: {
+      gap: {
         'xl': "800px"
       }
     },

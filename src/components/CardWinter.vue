@@ -1,8 +1,8 @@
 <template>
-  <div class="grid justify-items-center">
+  <div>
     <div class="z-10">
       <img
-        src="../../src/assets/Winnterzuko.png"
+        src="../../src/assets/WinnterZuko.png"
         alt="WinterZuko"
         class="object-cover border-2 border-black w-full h-36"
       />
@@ -10,15 +10,27 @@
     <div
       class="
         flex
-        justify-center
+        ml-auto
+        mr-auto
         bg-red-600
-        w-32
+        w-36
         border-2 border-black
         z-20
         -mt-4
       "
     >
-      <p class="font-serif text-black uppercase text-xl">WinterZuko</p>
+      <p
+        class="
+          font-serif
+          text-black
+          uppercase
+          text-xl text-center
+          ml-auto
+          mr-auto
+        "
+      >
+        WinterZuko
+      </p>
     </div>
   </div>
 </template>

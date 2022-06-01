@@ -11,7 +11,7 @@
       <IconSun class="flex place-items-end -ml-4 mt-10"></IconSun>
     </div>
     <div class="pt-4 pb-4">
-      <div class="grid grid-cols-2 lg:grid-cols-3 space-x-4 justify-center m-4">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 justify-center m-4">
         <RouterLink to="/LaFeve"
           ><CardFeve class="mb-12"></CardFeve
         ></RouterLink>

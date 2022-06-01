@@ -12,7 +12,7 @@
       class="
         grid grid-cols-2
         xl:grid-cols-4
-        space-x-4
+        gap-4
         justify-center
         ml-4
         mr-4
@@ -37,7 +37,7 @@
       class="
         grid grid-cols-2
         xl:grid-cols-4
-        space-x-4
+        gap-4
         justify-center
         ml-4
         mr-4
@@ -60,7 +60,7 @@
       class="
         grid grid-cols-2
         xl:grid-cols-4
-        space-x-4
+        gap-4
         justify-center
         ml-4
         mr-4

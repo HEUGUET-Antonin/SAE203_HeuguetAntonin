@@ -1,5 +1,5 @@
 <template>
-  <div class="grid justify-items-center">
+  <div>
     <div class="z-10">
       <img
         src="../../src/assets/WallaceCleaver.png"
@@ -10,7 +10,8 @@
     <div
       class="
         flex
-        justify-center
+        ml-auto
+        mr-auto
         bg-red-600
         w-28
         border-2 border-black

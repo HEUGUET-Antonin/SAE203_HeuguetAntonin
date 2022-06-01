@@ -1,5 +1,5 @@
 <template>
-  <div class="grid justify-items-center">
+  <div>
     <div class="z-10">
       <img
         src="../../src/assets/Chanceko.png"
@@ -10,15 +10,27 @@
     <div
       class="
         flex
-        justify-center
+        ml-auto
+        mr-auto
         bg-red-600
-        w-28
+        w-32
         border-2 border-black
         z-20
         -mt-4
       "
     >
-      <p class="font-serif text-black uppercase text-xl">Chanceko</p>
+      <p
+        class="
+          font-serif
+          text-black
+          uppercase
+          text-xl text-center
+          ml-auto
+          mr-auto
+        "
+      >
+        Chanceko
+      </p>
     </div>
   </div>
 </template>
