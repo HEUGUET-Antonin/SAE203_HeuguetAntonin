@@ -91,9 +91,15 @@ import { RouterLink, RouterView } from "vue-router";
       justify-center
       items-center
       space-x-28
+      sm:space-x-60
+      lg:space-x-96
+      xl:space-x-xl
       pt-6
       pb-12
       bg-yellow-50 bg-fond-footer bg-cover
+      sm:bg-fond-footer-sm
+      lg:bg-fond-footer-lg
+      xl:bg-fond-footer-xl
     "
   >
     <div class="grid space-y-2">

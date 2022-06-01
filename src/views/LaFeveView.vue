@@ -26,9 +26,17 @@
       Puis plus récemment avec son album solo “Errr” qui fut un total succès.
     </p>
   </div>
-  <div class="flex justify-center space-x-48 mt-12">
-    <img src="../assets/Errr.png" alt="" class="border-black border-2" />
-    <img src="../assets/Kolaf.png" alt="" class="border-black border-2" />
+  <div class="flex justify-center mt-12 lg:space-x-12 xl:space-x-24">
+    <img
+      src="../assets/Errr.png"
+      alt=""
+      class="border-black border-2 w-36 h-36 sm:w-[200px] sm:h-[198px]"
+    />
+    <img
+      src="../assets/Kolaf.png"
+      alt=""
+      class="border-black border-2 w-36 h-36 sm:w-[200px] sm:h-[198px]"
+    />
   </div>
   <div class="pb-24">
     <BoutonReservez class="ml-auto mr-auto mt-24"></BoutonReservez>

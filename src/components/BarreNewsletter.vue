@@ -3,7 +3,15 @@
     <form class="m-4 flex">
       <input
         type="email"
-        class="w-52 font-serif text-xs text-black border-black border h-7 pl-2"
+        class="
+          w-52
+          font-serif
+          text-xs text-black
+          border-black border
+          h-7
+          pl-2
+          sm:w-[394px]
+        "
         placeholder="Votre adresse mail"
       />
       <button

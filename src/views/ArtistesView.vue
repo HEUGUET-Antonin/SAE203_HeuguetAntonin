@@ -4,7 +4,17 @@
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
 
-  <div class="grid grid-cols-2 space-x-4 justify-center ml-4 mr-4 pb-6">
+  <div
+    class="
+      grid grid-cols-2
+      lg:grid-cols-3
+      space-x-4
+      justify-center
+      ml-4
+      mr-4
+      pb-6
+    "
+  >
     <RouterLink to="/LaFeve"><CardFeve class="mb-12"></CardFeve></RouterLink>
     <CardBushi class="mb-12"></CardBushi>
     <CardZamdane class="mb-12"></CardZamdane>

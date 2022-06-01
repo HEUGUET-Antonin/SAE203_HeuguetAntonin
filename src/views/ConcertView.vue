@@ -6,12 +6,96 @@
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
   <div class="grid justify-center">
-    <div><CardEdge></CardEdge></div>
-    <div><CardBushi></CardBushi></div>
-    <div><CardEpps></CardEpps></div>
-    <div><CardHomey></CardHomey></div>
+    <div class="flex mt-4 mb-4">
+      <CardEdge class="w-40"></CardEdge>
+      <p
+        class="
+          font-serif
+          text-black text-base
+          w-32
+          sm:w-[268px]
+          lg:w-[368px]
+          xl:w-[518px]
+          h-36
+          bg-white
+          border-black border-2
+          justify-center
+          pl-2
+          pt-10
+        "
+      >
+        19h-20h <br />
+        Scène principale
+      </p>
+    </div>
+    <div class="flex mt-4 mb-4">
+      <CardBushi class="w-40"></CardBushi>
+      <p
+        class="
+          font-serif
+          text-black text-base
+          w-32
+          sm:w-[268px]
+          lg:w-[368px]
+          xl:w-[518px]
+          h-36
+          bg-white
+          border-black border-2
+          justify-center
+          pl-2
+          pt-10
+        "
+      >
+        20h-21h <br />
+        Scène principale
+      </p>
+    </div>
+    <div class="flex mt-4 mb-4">
+      <CardEpps class="w-40"></CardEpps>
+      <p
+        class="
+          font-serif
+          text-black text-base
+          w-32
+          sm:w-[268px]
+          lg:w-[368px]
+          xl:w-[518px]
+          h-36
+          bg-white
+          border-black border-2
+          justify-center
+          pl-2
+          pt-10
+        "
+      >
+        21h-22h <br />
+        Scène principale
+      </p>
+    </div>
+    <div class="flex mt-4 mb-4">
+      <CardHomey class="w-40"></CardHomey>
+      <p
+        class="
+          font-serif
+          text-black text-base
+          w-32
+          sm:w-[268px]
+          lg:w-[368px]
+          xl:w-[518px]
+          h-36
+          bg-white
+          border-black border-2
+          justify-center
+          pl-2
+          pt-10
+        "
+      >
+        22h-23h <br />
+        Scène principale
+      </p>
+    </div>
   </div>
-  <div class="flex justify-center mt-28 pb-12">
+  <div class="flex justify-center mt-14 pb-12">
     <BoutonReservez></BoutonReservez>
   </div>
 </template>

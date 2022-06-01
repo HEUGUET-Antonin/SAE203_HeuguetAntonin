@@ -8,9 +8,19 @@
     <h3 class="font-serif uppercase text-black text-2xl">
       Vendredi 17 JUIN 2022
     </h3>
-    <div class="flex mt-8 mb-8">
-      <CardEdge></CardEdge>
-      <CardBushi></CardBushi>
+    <div
+      class="
+        grid grid-cols-2
+        xl:grid-cols-4
+        space-x-4
+        justify-center
+        ml-4
+        mr-4
+        mt-4
+      "
+    >
+      <CardEdge class="mb-12"></CardEdge>
+      <CardBushi class="mb-12"></CardBushi>
       <CardEpps></CardEpps>
       <CardHomey></CardHomey>
     </div>
@@ -23,9 +33,19 @@
     <h3 class="font-serif uppercase text-black text-2xl">
       Samedi 18 JUIN 2022
     </h3>
-    <div class="flex mt-8 mb-8">
-      <CardChanceko></CardChanceko>
-      <CardWinter></CardWinter>
+    <div
+      class="
+        grid grid-cols-2
+        xl:grid-cols-4
+        space-x-4
+        justify-center
+        ml-4
+        mr-4
+        mt-4
+      "
+    >
+      <CardChanceko class="mb-12"></CardChanceko>
+      <CardWinter class="mb-12"></CardWinter>
       <CardAnnie></CardAnnie>
       <CardWallace></CardWallace>
     </div>
@@ -36,9 +56,19 @@
     <h3 class="font-serif uppercase text-black text-2xl">
       Dimanche 19 JUIN 2022
     </h3>
-    <div class="flex mt-8 mb-8">
-      <CardFeve></CardFeve>
-      <CardZamdane></CardZamdane>
+    <div
+      class="
+        grid grid-cols-2
+        xl:grid-cols-4
+        space-x-4
+        justify-center
+        ml-4
+        mr-4
+        mt-4
+      "
+    >
+      <CardFeve class="mb-12"></CardFeve>
+      <CardZamdane class="mb-12"></CardZamdane>
       <CardKhali></CardKhali>
       <CardJ9ueve></CardJ9ueve>
     </div>

@@ -15,7 +15,16 @@
   <img
     src="../assets/Localisation.png"
     alt="Localisation"
-    class="ml-auto mr-auto mt-4"
+    class="
+      ml-auto
+      mr-auto
+      mt-4
+      sm:w-[476px]
+      lg:w-[655px]
+      xl:w-[922px]
+      h-[202px]
+      object-cover
+    "
   />
   <p class="font-serif text-black text-xl text-center mt-4 pb-16">
     Champs de mars 75015 Paris
