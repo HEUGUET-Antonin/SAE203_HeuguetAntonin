@@ -2,7 +2,7 @@
   <div>
     <div class="z-10">
       <img
-        src="\J9ueve.png"
+        src="\jnueve.png"
         alt="J9ueve"
         class="object-cover border-2 border-black w-full h-36"
       />
