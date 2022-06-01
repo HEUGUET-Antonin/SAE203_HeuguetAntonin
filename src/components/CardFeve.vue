@@ -4,7 +4,7 @@
       <img
         src="../../src/assets/Lafeve.png"
         alt="La fève"
-        class="border-2 border-black"
+        class="object-cover border-2 border-black w-full h-36"
       />
     </div>
     <div
@@ -15,8 +15,7 @@
         w-24
         border-2 border-black
         z-20
-        absolute
-        mt-52
+        -mt-4
       "
     >
       <p class="font-serif text-black uppercase text-xl z">La fève</p>

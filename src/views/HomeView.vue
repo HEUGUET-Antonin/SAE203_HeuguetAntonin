@@ -11,13 +11,13 @@
       <IconSun class="flex place-items-end -ml-4 mt-10"></IconSun>
     </div>
     <div class="pt-4 pb-4">
-      <div class="flex space-x-16 justify-center mb-20">
-        <RouterLink to="/LaFeve"><CardFeve></CardFeve></RouterLink>
-        <CardBushi></CardBushi>
-        <CardZamdane></CardZamdane>
-      </div>
-      <div class="flex space-x-16 justify-center">
-        <CardEdge></CardEdge>
+      <div class="grid grid-cols-2 space-x-4 justify-center m-4">
+        <RouterLink to="/LaFeve"
+          ><CardFeve class="mb-12"></CardFeve
+        ></RouterLink>
+        <CardBushi class="mb-12"></CardBushi>
+        <CardZamdane class="mb-12"></CardZamdane>
+        <CardEdge class="mb-12"></CardEdge>
         <CardHomey></CardHomey>
         <CardKhali></CardKhali>
       </div>

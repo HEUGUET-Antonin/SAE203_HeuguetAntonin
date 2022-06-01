@@ -1,10 +1,10 @@
 <template>
-  <div class="relative">
+  <div class="grid justify-items-center">
     <div class="z-10">
       <img
         src="../../src/assets/Homey.png"
         alt="ThaHomey"
-        class="border-2 border-black"
+        class="object-cover border-2 border-black w-full h-36"
       />
     </div>
     <div
@@ -15,13 +15,10 @@
         w-32
         border-2 border-black
         z-20
-        absolute
-        ml-28
-        mr-28
         -mt-4
       "
     >
-      <p class="font-serif text-black uppercase text-xl z">Thahomey</p>
+      <p class="font-serif text-black uppercase text-xl z">ThaHomey</p>
     </div>
   </div>
 </template>

@@ -4,19 +4,19 @@
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
 
-  <div class="grid grid-cols-3 justify-items-center mt-6">
-    <RouterLink to="/LaFeve"><CardFeve class="mb-16"></CardFeve></RouterLink>
-    <CardBushi class="mb-16"></CardBushi>
-    <CardZamdane class="mb-16"></CardZamdane>
-    <CardEdge class="mb-16"></CardEdge>
-    <CardHomey class="mb-16"></CardHomey>
-    <CardKhali class="mb-16"></CardKhali>
-    <CardJ9ueve class="mb-16"></CardJ9ueve>
-    <CardEpps class="mb-16"></CardEpps>
-    <CardChanceko class="mb-16"></CardChanceko>
-    <CardWinter class="mb-16"></CardWinter>
-    <CardAnnie class="mb-16"></CardAnnie>
-    <CardWallace class="mb-16"></CardWallace>
+  <div class="grid grid-cols-2 space-x-4 justify-center ml-4 mr-4 pb-6">
+    <RouterLink to="/LaFeve"><CardFeve class="mb-12"></CardFeve></RouterLink>
+    <CardBushi class="mb-12"></CardBushi>
+    <CardZamdane class="mb-12"></CardZamdane>
+    <CardEdge class="mb-12"></CardEdge>
+    <CardHomey class="mb-12"></CardHomey>
+    <CardKhali class="mb-12"></CardKhali>
+    <CardJ9ueve class="mb-12"></CardJ9ueve>
+    <CardEpps class="mb-12"></CardEpps>
+    <CardChanceko class="mb-12"></CardChanceko>
+    <CardWinter class="mb-12"></CardWinter>
+    <CardAnnie></CardAnnie>
+    <CardWallace></CardWallace>
   </div>
 </template>
 

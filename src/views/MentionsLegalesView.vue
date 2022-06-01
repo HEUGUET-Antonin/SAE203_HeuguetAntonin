@@ -7,10 +7,10 @@
   </div>
 
   <div>
-    <h2 class="font-serif text-2xl text-black mt-12 ml-44">
+    <h2 class="font-serif text-2xl text-black mt-12 ml-10">
       Identité & Coordonnées :
     </h2>
-    <p class="font-serif text-base text-black ml-48 mt-12">
+    <p class="font-serif text-base text-black ml-12 mt-12">
       Département métiers du multimédia et de l’internet de Montbéliard <br />
       Établissement Public <br />
       4, place Tharradin 25200 Montbéliard <br />
@@ -21,17 +21,17 @@
   </div>
 
   <div>
-    <h2 class="font-serif text-2xl text-black mt-12 ml-44">
+    <h2 class="font-serif text-2xl text-black mt-12 ml-10">
       Les mentions relatives à l’hébergement du site :
     </h2>
-    <p class="font-serif text-base text-black ml-48 mt-12">
+    <p class="font-serif text-base text-black ml-12 mt-12">
       Netlify <br />
       2325 3rd Street, Suite 296, San Francisco, California, 94107, USA
       <br />Site : https://www.netlify.com <br />Les contacter :
       https://www.netlify.com/support/<br />
       Tél. (415) 691-1573
     </p>
-    <p class="font-serif text-base text-black ml-48 mt-12">
+    <p class="font-serif text-base text-black ml-12 mt-12 pb-8">
       Infomaniak<br />
       Rue Eugène, Marziano 25, 1227 Genève, Suisse <br />Site :
       https://www.infomaniak.com/fr <br />Les contacter :

@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <header class="pt-6 pl-8 pr-8 pb-8 bg-yellow-50 text-black">
     <div class="flex justify-between items-center">
-      <RouterLink to="/guidestyle"
+      <RouterLink to="/"
         ><img src="src\assets\Logo.png" alt="Logo NewFest"
       /></RouterLink>
       <div class="block lg:hidden">
@@ -37,12 +37,10 @@ import { RouterLink, RouterView } from "vue-router";
           :class="{ 'translate-x-0': menuOuvert }"
         >
           <RouterLink to="/" class="mt-40">Accueil</RouterLink>
-          <RouterLink to="/programmation " class="-mt-16"
-            >Programmation</RouterLink
-          >
-          <RouterLink to="/artistes" class="-mt-24">Artistes</RouterLink>
-          <RouterLink to="/apropos" class="-mt-32"> à propos</RouterLink>
-          <RouterLink to="/contact" class="-mt-40">Contact</RouterLink>
+          <RouterLink to="/programmation " class="">Programmation</RouterLink>
+          <RouterLink to="/artistes" class="">Artistes</RouterLink>
+          <RouterLink to="/apropos" class=""> à propos</RouterLink>
+          <RouterLink to="/contact" class="">Contact</RouterLink>
         </div>
       </div>
 
@@ -62,13 +60,21 @@ import { RouterLink, RouterView } from "vue-router";
             uppercase
           "
         >
-          <RouterLink to="/" class="ml-6 mr-6">Accueil</RouterLink>
-          <RouterLink to="/programmation" class="ml-6 mr-6"
+          <RouterLink to="/" class="ml-6 mr-6 hover:text-white"
+            >Accueil</RouterLink
+          >
+          <RouterLink to="/programmation" class="ml-6 mr-6 hover:text-white"
             >Programmation</RouterLink
           >
-          <RouterLink to="/artistes" class="ml-6 mr-6">Artistes</RouterLink>
-          <RouterLink to="/apropos" class="ml-6 mr-6"> à propos</RouterLink>
-          <RouterLink to="/contact" class="ml-6 mr-6">Contact</RouterLink>
+          <RouterLink to="/artistes" class="ml-6 mr-6 hover:text-white"
+            >Artistes</RouterLink
+          >
+          <RouterLink to="/apropos" class="ml-6 mr-6 hover:text-white">
+            à propos</RouterLink
+          >
+          <RouterLink to="/contact" class="ml-6 mr-6 hover:text-white"
+            >Contact</RouterLink
+          >
         </nav>
       </div>
     </div>
@@ -84,17 +90,26 @@ import { RouterLink, RouterView } from "vue-router";
       flex
       justify-center
       items-center
-      space-x-[700px]
+      space-x-28
       pt-6
-      pb-4
+      pb-12
       bg-yellow-50 bg-fond-footer bg-cover
     "
   >
-    <RouterLink to="/mentionslegales">
-      <p class="font-serif text-black text-xs hover:text-red-500">
-        Mentions Légales
-      </p>
-    </RouterLink>
+    <div class="grid space-y-2">
+      <RouterLink to="/mentionslegales">
+        <p class="font-serif text-black text-xs hover:text-red-500 mt-4">
+          Mentions Légales
+        </p>
+      </RouterLink>
+
+      <RouterLink to="/guidestyle">
+        <p class="font-serif text-black text-xs hover:text-red-500">
+          Guide de Style
+        </p>
+      </RouterLink>
+    </div>
+
     <a href="http://1863.fr/">
       <img src="../src/assets/1863.png" alt="Logo 1863"
     /></a>

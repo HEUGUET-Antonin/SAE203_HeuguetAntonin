@@ -2,7 +2,7 @@
   <input
     type="message"
     class="
-      w-[1100px]
+      w-72
       h-40
       font-serif
       text-xs text-black

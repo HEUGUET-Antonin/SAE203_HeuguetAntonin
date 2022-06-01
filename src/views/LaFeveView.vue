@@ -18,7 +18,7 @@
         border-black border-2
       "
     />
-    <p class="font-serif text-black text-base leading-10">
+    <p class="font-serif text-black text-base leading-10 ml-8 mr-8">
       La Fève est l’un des nouveaux phénomènes du rap francophone.<br />
       C’est l’un des piliers du mouvement “Next-Gen” en france.<br />
       C’est suite à son album en commun avec le beatmaker Kosei “Kolaf” que le

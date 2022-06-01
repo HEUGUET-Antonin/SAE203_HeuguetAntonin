@@ -3,7 +3,9 @@
     <h1 class="font-display text-black text-3xl text-center">Guide de style</h1>
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
-  <CardFeve></CardFeve>
+  <div>
+    <CardFeve></CardFeve>
+  </div>
 </template>
 
 
