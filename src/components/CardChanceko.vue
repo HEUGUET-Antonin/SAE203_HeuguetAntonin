@@ -2,7 +2,7 @@
   <div>
     <div class="z-10">
       <img
-        src="../../src/assets/Chanceko.png"
+        src="\Chanceko.png"
         alt="Chanceko"
         class="object-cover border-2 border-black w-full h-36"
       />

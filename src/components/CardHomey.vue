@@ -2,7 +2,7 @@
   <div>
     <div class="z-10">
       <img
-        src="../../src/assets/Homey.png"
+        src="\Homey.png"
         alt="ThaHomey"
         class="object-cover border-2 border-black w-full h-36"
       />

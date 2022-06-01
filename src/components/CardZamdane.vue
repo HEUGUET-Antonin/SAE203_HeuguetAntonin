@@ -2,7 +2,7 @@
   <div>
     <div class="z-10">
       <img
-        src="../../src/assets/Zamdane.png"
+        src="\Zamdane.png"
         alt="Zamdane"
         class="object-cover border-2 border-black w-full h-36"
       />

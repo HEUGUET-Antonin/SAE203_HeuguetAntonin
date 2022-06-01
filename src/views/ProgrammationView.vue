@@ -8,47 +8,35 @@
     <h3 class="font-serif uppercase text-black text-2xl">
       Vendredi 17 JUIN 2022
     </h3>
-    <div
-      class="
-        grid grid-cols-2
-        xl:grid-cols-4
-        gap-4
-        justify-center
-        ml-4
-        mr-4
-        mt-4
-      "
-    >
-      <CardEdge class="mb-12"></CardEdge>
-      <CardBushi class="mb-12"></CardBushi>
-      <CardEpps></CardEpps>
-      <CardHomey></CardHomey>
-    </div>
-    <RouterLink to="/concert"
-      ><BoutonSavoirplus class="mt-12"></BoutonSavoirplus
-    ></RouterLink>
   </div>
+  <div
+    class="grid grid-cols-2 xl:grid-cols-4 gap-4 justify-center mt-4 ml-8 mr-8"
+  >
+    <CardEdge class="mb-12"></CardEdge>
+    <CardBushi class="mb-12"></CardBushi>
+    <CardEpps></CardEpps>
+    <CardHomey></CardHomey>
+  </div>
+  <RouterLink to="/concert">
+    <div class="grid justify-center pb-12">
+      <BoutonSavoirplus class="mt-12"></BoutonSavoirplus>
+    </div>
+  </RouterLink>
 
   <div class="grid justify-items-center mt-4 pb-12">
     <h3 class="font-serif uppercase text-black text-2xl">
       Samedi 18 JUIN 2022
     </h3>
-    <div
-      class="
-        grid grid-cols-2
-        xl:grid-cols-4
-        gap-4
-        justify-center
-        ml-4
-        mr-4
-        mt-4
-      "
-    >
-      <CardChanceko class="mb-12"></CardChanceko>
-      <CardWinter class="mb-12"></CardWinter>
-      <CardAnnie></CardAnnie>
-      <CardWallace></CardWallace>
-    </div>
+  </div>
+  <div
+    class="grid grid-cols-2 xl:grid-cols-4 gap-4 justify-center mt-4 ml-8 mr-8"
+  >
+    <CardChanceko class="mb-12"></CardChanceko>
+    <CardWinter class="mb-12"></CardWinter>
+    <CardAnnie></CardAnnie>
+    <CardWallace></CardWallace>
+  </div>
+  <div class="grid justify-center pb-12">
     <BoutonSavoirplus class="mt-12"></BoutonSavoirplus>
   </div>
 
@@ -56,22 +44,16 @@
     <h3 class="font-serif uppercase text-black text-2xl">
       Dimanche 19 JUIN 2022
     </h3>
-    <div
-      class="
-        grid grid-cols-2
-        xl:grid-cols-4
-        gap-4
-        justify-center
-        ml-4
-        mr-4
-        mt-4
-      "
-    >
-      <CardFeve class="mb-12"></CardFeve>
-      <CardZamdane class="mb-12"></CardZamdane>
-      <CardKhali></CardKhali>
-      <CardJ9ueve></CardJ9ueve>
-    </div>
+  </div>
+  <div
+    class="grid grid-cols-2 xl:grid-cols-4 gap-4 justify-center mt-4 ml-8 mr-8"
+  >
+    <CardFeve class="mb-12"></CardFeve>
+    <CardZamdane class="mb-12"></CardZamdane>
+    <CardKhali></CardKhali>
+    <CardJ9ueve></CardJ9ueve>
+  </div>
+  <div class="grid justify-center pb-12">
     <BoutonSavoirplus class="mt-12"></BoutonSavoirplus>
   </div>
 </template>

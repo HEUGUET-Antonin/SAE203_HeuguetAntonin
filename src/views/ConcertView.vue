@@ -5,9 +5,20 @@
     </h1>
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
-  <div class="grid justify-center">
-    <div class="flex mt-4 mb-4">
-      <CardEdge class="w-40"></CardEdge>
+  <div>
+    <div
+      class="
+        flex
+        justify-center
+        mt-4
+        mb-4
+        ml-16
+        mr-12
+        lg:ml-32 lg:mr-24
+        xl:ml-48 xl:mr-32
+      "
+    >
+      <CardEdge class="w-full"></CardEdge>
       <p
         class="
           font-serif
@@ -28,8 +39,19 @@
         Scène principale
       </p>
     </div>
-    <div class="flex mt-4 mb-4">
-      <CardBushi class="w-40"></CardBushi>
+    <div
+      class="
+        flex
+        justify-center
+        mt-4
+        mb-4
+        ml-16
+        mr-12
+        lg:ml-32 lg:mr-24
+        xl:ml-48 xl:mr-32
+      "
+    >
+      <CardBushi class="w-full"></CardBushi>
       <p
         class="
           font-serif
@@ -50,8 +72,19 @@
         Scène principale
       </p>
     </div>
-    <div class="flex mt-4 mb-4">
-      <CardEpps class="w-40"></CardEpps>
+    <div
+      class="
+        flex
+        justify-center
+        mt-4
+        mb-4
+        ml-16
+        mr-12
+        lg:ml-32 lg:mr-24
+        xl:ml-48 xl:mr-32
+      "
+    >
+      <CardEpps class="w-full"></CardEpps>
       <p
         class="
           font-serif
@@ -72,8 +105,19 @@
         Scène principale
       </p>
     </div>
-    <div class="flex mt-4 mb-4">
-      <CardHomey class="w-40"></CardHomey>
+    <div
+      class="
+        flex
+        justify-center
+        mt-4
+        mb-4
+        ml-16
+        mr-12
+        lg:ml-32 lg:mr-24
+        xl:ml-48 xl:mr-32
+      "
+    >
+      <CardHomey class="w-full"></CardHomey>
       <p
         class="
           font-serif

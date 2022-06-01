@@ -2,7 +2,7 @@
   <div>
     <div class="z-10">
       <img
-        src="../../src/assets/J9ueve.png"
+        src="\J9ueve.png"
         alt="J9ueve"
         class="object-cover border-2 border-black w-full h-36"
       />

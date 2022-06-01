@@ -2,7 +2,7 @@
   <div>
     <div class="z-10">
       <img
-        src="../../src/assets/Edge.png"
+        src="\Edge.png"
         alt="Edge"
         class="object-cover border-2 border-black w-full h-36"
       />
