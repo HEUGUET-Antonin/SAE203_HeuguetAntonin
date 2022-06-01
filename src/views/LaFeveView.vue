@@ -5,7 +5,7 @@
   </div>
   <div class="grid justify-center">
     <img
-      src="../assets/Lafeve.png"
+      src="\Lafeve.png"
       alt="La fève"
       class="
         ml-auto
@@ -28,12 +28,12 @@
   </div>
   <div class="flex justify-center mt-12 lg:space-x-12 xl:space-x-24">
     <img
-      src="../assets/Errr.png"
+      src="\Errr.png"
       alt=""
       class="border-black border-2 w-36 h-36 sm:w-[200px] sm:h-[198px]"
     />
     <img
-      src="../assets/Kolaf.png"
+      src="\Kolaf.png"
       alt=""
       class="border-black border-2 w-36 h-36 sm:w-[200px] sm:h-[198px]"
     />
