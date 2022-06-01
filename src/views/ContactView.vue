@@ -13,7 +13,7 @@
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
   <img
-    src="../assets/Localisation.png"
+    src="\Localisation.png"
     alt="Localisation"
     class="
       ml-auto
