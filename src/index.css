@@ -5,3 +5,7 @@
 input::placeholder {
     color: black;
 }
+
+input#file-upload-button {
+    background-color: red;
+}

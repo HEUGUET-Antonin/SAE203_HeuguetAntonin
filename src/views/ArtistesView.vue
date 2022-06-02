@@ -37,7 +37,36 @@ import CardJ9ueve from "../components/CardJ9ueve.vue";
 import CardWallace from "../components/CardWallace.vue";
 import CardWinter from "../components/CardWinter.vue";
 
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+
+import {
+  getStorage,
+  ref,
+  getDownloadURL,
+  uploadString,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
+
 export default {
+  name: "ListeView",
+  data() {
+    return {
+      ListeParticipant: [],
+    };
+  },
+  mounted() {
+    this.getParticipants();
+  },
   components: {
     IconSun,
     CardFeve,
