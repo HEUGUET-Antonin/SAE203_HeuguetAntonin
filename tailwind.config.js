@@ -19,7 +19,7 @@ module.exports = {
       },
 
       gap: {
-        'xl': "800px"
+        'xl': "500px"
       }
     },
   },
