@@ -10,10 +10,10 @@ module.exports = {
         'display': ['Shrikhand'],
       },
       backgroundImage: {
-        'fond-footer': "url('fond_footer.svg')",
-        'fond-footer-sm': "url('fond_footer-sm.svg')",
-        'fond-footer-lg': "url('fond_footer-lg.svg')",
-        'fond-footer-xl': "url('fond_footer-xl.svg')",
+        'fond-footer': "url('/fond_footer.svg')",
+        'fond-footer-sm': "url('/fond_footer-sm.svg')",
+        'fond-footer-lg': "url('/fond_footer-lg.svg')",
+        'fond-footer-xl': "url('/fond_footer-xl.svg')",
 
 
       },
