@@ -12,6 +12,7 @@ import Page404 from '../views/Page404.vue'
 import CreateArtisteView from '../views/CreateArtisteView.vue'
 import DeleteArtisteView from '../views/DeleteArtisteView.vue'
 import EditArtisteView from '../views/EditArtisteView.vue'
+import LexiqueView from '../views/LexiqueView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -60,6 +61,11 @@ const router = createRouter({
       path: '/programmation',
       name: 'programmation',
       component: ProgrammationView
+    },
+    {
+      path: '/lexique',
+      name: 'lexique',
+      component: LexiqueView
     },
     {
       path: '/mentionslegales',
