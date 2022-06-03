@@ -48,11 +48,13 @@
           <div class="flex justify-end mr-4 gap-4">
             <RouterLink
               :to="{ name: 'editartiste', params: { id: artiste.id } }"
-              ><IconEdit class="-mt-36 bg-yellow-500 bg-opacity-50 rounded-sm"
+              ><IconEdit
+                class="-mt-36 stroke-white bg-black bg-opacity-30 rounded-sm"
             /></RouterLink>
             <RouterLink
               :to="{ name: 'deleteartiste', params: { id: artiste.id } }"
-              ><IconTrash class="-mt-36 bg-red-500 bg-opacity-50 rounded-sm"
+              ><IconTrash
+                class="-mt-36 stroke-white bg-black bg-opacity-30 rounded-sm"
             /></RouterLink>
           </div>
         </div>
@@ -62,6 +64,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import IconSun from "../components/icons/IconSun.vue";
 import IconPlus from "../components/icons/IconPlus.vue";
 import IconEdit from "../components/icons/IconEdit.vue";

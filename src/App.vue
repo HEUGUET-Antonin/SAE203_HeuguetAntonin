@@ -114,6 +114,10 @@ import { RouterLink, RouterView } from "vue-router";
           Guide de Style
         </p>
       </RouterLink>
+
+      <RouterLink to="/lexique">
+        <p class="font-serif text-black text-xs hover:text-red-500">Lexique</p>
+      </RouterLink>
     </div>
 
     <a href="http://1863.fr/"> <img src="\1863.png" alt="Logo 1863" /></a>

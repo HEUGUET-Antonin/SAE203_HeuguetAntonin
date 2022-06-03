@@ -14,14 +14,14 @@
           <input
             type="text"
             v-model="nom"
-            class="font-serif pl-2"
+            class="font-serif pl-2 border-black border-2"
             placeholder="Mot"
             required
           />
           <input
             type="text"
             v-model="def"
-            class="font-serif pl-2"
+            class="font-serif pl-2 border-black border-2 w-max"
             required
             placeholder="Définition"
           />

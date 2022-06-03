@@ -12,7 +12,7 @@
         Couleurs
       </h2>
     </div>
-    <div class="flex space-x-4">
+    <div class="flex space-x-4 justify-center">
       <div class="w-16 h-16 rounded-full bg-black"></div>
       <div class="w-16 h-16 rounded-full bg-white border-2 border-black"></div>
       <div class="w-16 h-16 rounded-full bg-red-500"></div>
