@@ -4,7 +4,7 @@
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
 
-  <form>
+  <form class="max-w-[40rem] mx-auto">
     <section class="grid justify-center gap-4 pb-8">
       <div>
         <p class="font-serif uppercase mt-4">Créez une nouvelle définition</p>
@@ -21,7 +21,7 @@
           <input
             type="text"
             v-model="def"
-            class="font-serif pl-2 border-black border-2 w-max"
+            class="font-serif pl-2 border-black border-2 w-fit"
             required
             placeholder="Définition"
           />
@@ -35,18 +35,18 @@
     <section
       v-for="lexique in listelexiqueSynchro"
       :key="lexique.id"
-      class="pb-12 mt-12 flex justify-center"
+      class="pb-8 mt-12 flex justify-between"
     >
-      <div class="grid gap-8">
+      <div class="flex flex-col flex-auto gap-8 pb-12">
         <input
           type="text"
           v-model="lexique.nom"
-          class="font-serif uppercase text-xl bg-yellow-50 -ml-4"
+          class="font-serif uppercase text-xl bg-yellow-50"
         />
-        <input
+        <textarea
           type="text"
           v-model="lexique.def"
-          class="font-serif text-base bg-yellow-50 ml-2"
+          class="font-serif text-base bg-yellow-50 w-full pb-12"
         />
       </div>
       <div class="mt-8 ml-12">
