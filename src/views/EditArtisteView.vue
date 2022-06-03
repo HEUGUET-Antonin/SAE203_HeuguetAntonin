@@ -1,9 +1,9 @@
 <template>
-  <div class="jazznpop-text p-page">
-    <form enctype="multipart/form-data" @submit.prevent="createArtiste()">
+  <div class="">
+    <form enctype="multipart/form-data" @submit.prevent="editartiste">
       <div class="flex justify-center ml-4 mr-4 pt-4 pb-4">
         <h1 class="font-display text-black text-3xl text-center">
-          Ajouter un artiste
+          Mise à jour artiste
         </h1>
         <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
       </div>
@@ -74,7 +74,7 @@
         "
       >
         <button
-          contenuTextBouton="Créer"
+          contenuTextBouton="Modifier"
           type="submit"
           class="
             w-fit
@@ -87,7 +87,7 @@
             bg-yellow-200
           "
         >
-          Créer
+          Modifier
         </button>
 
         <router-link to="/artistes">
@@ -136,50 +136,92 @@ import {
 import IconSun from "../components/icons/IconSun.vue";
 
 export default {
-  name: "CreateArtisteView",
+  name: "EditArtisteView",
   components: { IconSun },
   data() {
     return {
       imageData: null,
+      listeartiste: [],
       artiste: {
         nom: null,
         photo: null,
       },
+      refArtiste: null,
+      imgModifiee: false,
+      photoActuelle: null,
     };
   },
-  mounted() {},
+  mounted() {
+    console.log("id artiste", this.$route.params.id);
+    this.artiste(this.$route.params.id);
+    this.getartiste();
+  },
+
   methods: {
+    async getartiste() {
+      const firestore = getFirestore();
+      const dbartiste = collection(firestore, "artiste");
+      const q = query(dbartiste, orderBy("nom", "asc"));
+      await onSnapshot(q, (snapshot) => {
+        this.listeartiste = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+      });
+    },
+
+    async getartiste(id) {
+      const firestore = getFirestore();
+      const docRef = doc(firestore, "artiste", id);
+      this.refartiste = await getDoc(docRef);
+      if (this.refartiste.exists()) {
+        this.artiste = this.refartiste.data();
+        this.photoActuelle = this.artiste.photo;
+      } else {
+        this.console.log("Artiste inexistant");
+      }
+      const storage = getStorage();
+      const spaceRef = ref(storage, "artiste/" + this.artiste.photo);
+      getDownloadURL(spaceRef)
+        .then((url) => {
+          this.imageData = url;
+        })
+        .catch((error) => {
+          console.log("erreur downloadUrl", error);
+        });
+    },
+
     previewImage: function (event) {
       this.file = this.$refs.file.files[0];
-
       this.artiste.photo = this.file.name;
-
+      this.imgModifiee = true;
       var input = event.target;
-
       if (input.files && input.files[0]) {
         var reader = new FileReader();
-
         reader.onload = (e) => {
           this.imageData = e.target.result;
         };
-
         reader.readAsDataURL(input.files[0]);
       }
     },
-    async createArtiste() {
-      const storage = getStorage();
 
-      const refStorage = ref(storage, "artiste/" + this.artiste.photo);
-
-      await uploadString(refStorage, this.imageData, "data_url").then(
-        (snapshot) => {
-          console.log("Uploaded a base64 string");
-
-          const db = getFirestore();
-          const docRef = addDoc(collection(db, "artiste"), this.artiste);
-        }
+    async editartiste() {
+      if (this.imgModifiee) {
+        const storage = getStorage();
+        let docRef = ref(storage, "artiste/" + this.photoActuelle);
+        deleteObject(docRef);
+        docRef = ref(storage, "artiste/" + this.artiste.photo);
+        await uploadString(docRef, this.imageData, "data_url").then(
+          (snapshot) => {
+            console.log("Uploaded a base64 string", this.artiste.photo);
+          }
+        );
+      }
+      const firestore = getFirestore();
+      await updateDoc(
+        doc(firestore, "artiste", this.$route.params.id),
+        this.artiste
       );
-
       this.$router.push("/artistes");
     },
   },

@@ -109,7 +109,7 @@ import { RouterLink, RouterView } from "vue-router";
         </p>
       </RouterLink>
 
-      <RouterLink to="/guidestyle">
+      <RouterLink to="/style-guide">
         <p class="font-serif text-black text-xs hover:text-red-500">
           Guide de Style
         </p>

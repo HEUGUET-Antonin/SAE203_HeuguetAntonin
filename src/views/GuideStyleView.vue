@@ -137,9 +137,11 @@ import BarreMail from "../components/BarreMail.vue";
 import BarreMessage from "../components/BarreMessage.vue";
 import BoutonEnvoyer from "../components/BoutonEnvoyer.vue";
 import BarreNewsletter from "../components/BarreNewsletter.vue";
+import CardArtiste from "../components/CardArtiste.vue";
 
 export default {
   components: {
+    CardArtiste,
     BarreNewsletter,
     BoutonReservez,
     BarreMail,

@@ -1,9 +1,9 @@
 <template>
-  <div class="jazznpop-text p-page">
-    <form enctype="multipart/form-data" @submit.prevent="createArtiste()">
+  <div class="">
+    <form enctype="multipart/form-data" @submit.prevent="deleteartiste">
       <div class="flex justify-center ml-4 mr-4 pt-4 pb-4">
         <h1 class="font-display text-black text-3xl text-center">
-          Ajouter un artiste
+          Supprimer un artiste
         </h1>
         <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
       </div>
@@ -27,6 +27,7 @@
             placeholder="Exemple : La Fève"
             v-model="artiste.nom"
             required
+            disabled
           />
         </div>
         <div class="flex flex-col">
@@ -57,7 +58,7 @@
               md:w-48
               lg:w-52
             "
-            :src="imageData"
+            :src="photoActuelle"
           />
         </div>
       </div>
@@ -87,10 +88,10 @@
             bg-yellow-200
           "
         >
-          Créer
+          Supprimer
         </button>
 
-        <router-link to="/artistes">
+        <RouterLink to="/artistes">
           <button
             contenuTextBouton="Annuler"
             class="
@@ -106,80 +107,116 @@
           >
             Annuler
           </button>
-        </router-link>
+        </RouterLink>
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import IconSun from "../components/icons/IconSun.vue";
+// Bibliothèque Firestore : import des fonctions
+
 import {
   getFirestore,
   collection,
   doc,
+  getDoc,
   getDocs,
   addDoc,
   updateDoc,
+  setDoc,
   deleteDoc,
   onSnapshot,
   query,
   orderBy,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
+// Storage
 import {
   getStorage,
   ref,
   getDownloadURL,
+  uploadBytes,
   uploadString,
+  deleteObject,
+  listAll,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
-import IconSun from "../components/icons/IconSun.vue";
-
 export default {
-  name: "CreateArtisteView",
-  components: { IconSun },
+  components: {
+    IconSun,
+  },
+  name: "DeleteView",
   data() {
     return {
-      imageData: null,
       artiste: {
-        nom: null,
-        photo: null,
+        // Le participant à créer
+        nom: null, // son nom
+        photo: null, // sa photo (nom du fichier)
       },
+
+      refArtiste: null, // Référence du participant à modifier
+      photoActuelle: null, // Photo actuelle du participant
     };
   },
-  mounted() {},
+  mounted() {
+    // Montage de la vue
+    // Récupération du id passé en paramètre
+    // On utilise le id passé par la route
+    // via la variable système $route de la vue
+    console.log("id artiste", this.$route.params.id);
+    // Recherche participant concerné
+    this.getartiste(this.$route.params.id);
+  },
+
   methods: {
-    previewImage: function (event) {
-      this.file = this.$refs.file.files[0];
-
-      this.artiste.photo = this.file.name;
-
-      var input = event.target;
-
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = (e) => {
-          this.imageData = e.target.result;
-        };
-
-        reader.readAsDataURL(input.files[0]);
+    async getartiste(id) {
+      // Obtenir Firestore
+      const firestore = getFirestore();
+      // Base de données (collection)  document participant
+      // Récupération sur Firestore du participant via son id
+      const docRef = doc(firestore, "artiste", id);
+      // Référence du participant concerné
+      this.refartiste = await getDoc(docRef);
+      // Test si le participant demandé existe
+      if (this.refartiste.exists()) {
+        // Si oui on récupère ses données
+        this.artiste = this.refartiste.data();
+        // Mémorisation photoActuelle
+        this.photoActuelle = this.artiste.photo;
+      } else {
+        // Sinon simple message d'erreur
+        this.console.log("Artiste inexistant");
       }
-    },
-    async createArtiste() {
+      // Obtenir le Storage
       const storage = getStorage();
+      // Référence de l'image du participant
+      const spaceRef = ref(storage, "artiste/" + this.artiste.photo);
+      // Récupération de l'url complète de l'image
+      getDownloadURL(spaceRef)
+        .then((url) => {
+          // Mise à jour de l'image prévisualisée
+          this.photoActuelle = url;
+        })
+        .catch((error) => {
+          console.log("erreur downloadUrl", error);
+        });
+    },
 
-      const refStorage = ref(storage, "artiste/" + this.artiste.photo);
+    async deleteartiste() {
+      const firestore = getFirestore();
+      // Suppresion du participant
+      await deleteDoc(doc(firestore, "artiste", this.$route.params.id));
 
-      await uploadString(refStorage, this.imageData, "data_url").then(
-        (snapshot) => {
-          console.log("Uploaded a base64 string");
+      // Suppresson de l'image
+      const storage = getStorage();
+      // Référence du fichier de la photo
+      let docRef = ref(storage, "artiste/" + this.artiste.photo);
+      // Suppression du fichier
+      deleteObject(docRef);
 
-          const db = getFirestore();
-          const docRef = addDoc(collection(db, "artiste"), this.artiste);
-        }
-      );
-
+      // redirection sur la liste des participants
       this.$router.push("/artistes");
     },
   },

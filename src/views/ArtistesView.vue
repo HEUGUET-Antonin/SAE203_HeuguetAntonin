@@ -3,39 +3,69 @@
     <h1 class="font-display text-black text-3xl text-center">Les artistes</h1>
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
-
+  <RouterLink to="/createartiste">
+    <div class="flex justify-end mr-12 mt-4 mb-12">
+      <div
+        class="flex bg-yellow-300 border-black border-2 px-4 gap-4 items-center"
+      >
+        <p class="font-serif text-black uppercase text-2xl">
+          Ajouter un artiste
+        </p>
+        <IconPlus class="stroke-4 w-5"></IconPlus>
+      </div>
+    </div>
+  </RouterLink>
   <div
     class="grid grid-cols-2 lg:grid-cols-3 gap-4 justify-center ml-4 mr-4 pb-6"
   >
-    <RouterLink to="/LaFeve"><CardFeve class="mb-12"></CardFeve></RouterLink>
-    <CardBushi class="mb-12"></CardBushi>
-    <CardZamdane class="mb-12"></CardZamdane>
-    <CardEdge class="mb-12"></CardEdge>
-    <CardHomey class="mb-12"></CardHomey>
-    <CardKhali class="mb-12"></CardKhali>
-    <CardJ9ueve class="mb-12"></CardJ9ueve>
-    <CardEpps class="mb-12"></CardEpps>
-    <CardChanceko class="mb-12"></CardChanceko>
-    <CardWinter class="mb-12"></CardWinter>
-    <CardAnnie></CardAnnie>
-    <CardWallace></CardWallace>
+    <section v-for="artiste in listeArtiste" :key="artiste.id" class="mb-12">
+      <div class="">
+        <img
+          :src="artiste.photo"
+          class="object-cover border-2 border-black w-full h-36"
+        />
+        <div
+          class="
+            flex
+            ml-auto
+            mr-auto
+            bg-red-600
+            w-max
+            px-4
+            border-2 border-black
+            z-20
+            -mt-4
+          "
+        >
+          <p
+            class="font-serif text-black uppercase text-xl text-center mx-auto"
+          >
+            {{ artiste.nom }}
+          </p>
+        </div>
+
+        <div class="flex flex-col z-20">
+          <div class="flex justify-end mr-4 gap-4">
+            <RouterLink
+              :to="{ name: 'editartiste', params: { id: artiste.id } }"
+              ><IconEdit class="-mt-36 bg-yellow-500 bg-opacity-50 rounded-sm"
+            /></RouterLink>
+            <RouterLink
+              :to="{ name: 'deleteartiste', params: { id: artiste.id } }"
+              ><IconTrash class="-mt-36 bg-red-500 bg-opacity-50 rounded-sm"
+            /></RouterLink>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import IconSun from "../components/icons/IconSun.vue";
-import CardFeve from "../components/CardFeve.vue";
-import CardEdge from "../components/CardEdge.vue";
-import CardBushi from "../components/CardBushi.vue";
-import CardHomey from "../components/CardHomey.vue";
-import CardKhali from "../components/CardKhali.vue";
-import CardZamdane from "../components/CardZamdane.vue";
-import CardAnnie from "../components/CardAnnie.vue";
-import CardChanceko from "../components/CardChanceko.vue";
-import CardEpps from "../components/CardEpps.vue";
-import CardJ9ueve from "../components/CardJ9ueve.vue";
-import CardWallace from "../components/CardWallace.vue";
-import CardWinter from "../components/CardWinter.vue";
+import IconPlus from "../components/icons/IconPlus.vue";
+import IconEdit from "../components/icons/IconEdit.vue";
+import IconTrash from "../components/icons/IconTrash.vue";
 
 import {
   getFirestore,
@@ -56,31 +86,47 @@ import {
   getDownloadURL,
   uploadString,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
-
 export default {
-  name: "ListeView",
+  components: {
+    IconPlus,
+    IconSun,
+    IconEdit,
+    IconTrash,
+  },
+  name: "ArtistesView",
   data() {
     return {
-      ListeParticipant: [],
+      listeArtiste: [],
     };
   },
   mounted() {
-    this.getParticipants();
+    this.getArtiste();
   },
-  components: {
-    IconSun,
-    CardFeve,
-    CardBushi,
-    CardEdge,
-    CardHomey,
-    CardKhali,
-    CardZamdane,
-    CardWinter,
-    CardWallace,
-    CardJ9ueve,
-    CardEpps,
-    CardChanceko,
-    CardAnnie,
+  methods: {
+    async getArtiste() {
+      const firestore = getFirestore();
+      const dbArtiste = collection(firestore, "artiste");
+      const query = await onSnapshot(dbArtiste, (snapshot) => {
+        console.log("query", query);
+        this.listeArtiste = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        this.listeArtiste.forEach(function (personne) {
+          const storage = getStorage();
+          const spaceRef = ref(storage, "artiste/" + personne.photo);
+          getDownloadURL(spaceRef)
+            .then((url) => {
+              personne.photo = url;
+              console.log("personne", personne);
+            })
+            .catch((error) => {
+              console.log("erreur downloadUrl", error);
+            });
+        });
+        console.log("listeArtiste", this.listeArtiste);
+      });
+    },
   },
 };
 </script>

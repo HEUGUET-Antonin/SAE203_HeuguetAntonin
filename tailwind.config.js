@@ -20,6 +20,9 @@ module.exports = {
 
       gap: {
         'xl': "500px"
+      },
+      strokeWidth: {
+        '4': '4px',
       }
     },
   },

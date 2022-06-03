@@ -10,6 +10,8 @@ import GuideStyleView from '../views/GuideStyleView.vue'
 import ConcertView from '../views/ConcertView.vue'
 import Page404 from '../views/Page404.vue'
 import CreateArtisteView from '../views/CreateArtisteView.vue'
+import DeleteArtisteView from '../views/DeleteArtisteView.vue'
+import EditArtisteView from '../views/EditArtisteView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +25,16 @@ const router = createRouter({
       path: '/createartiste',
       name: 'createartiste',
       component: CreateArtisteView
+    },
+    {
+      path: '/deleteartiste/:id',
+      name: 'deleteartiste',
+      component: DeleteArtisteView
+    },
+    {
+      path: '/editartiste/:id',
+      name: 'editartiste',
+      component: EditArtisteView
     },
     {
       path: '/:pathMatch(.*)*',
@@ -40,7 +52,7 @@ const router = createRouter({
       component: LaFeveView
     },
     {
-      path: '/guidestyle',
+      path: '/style-guide',
       name: 'guidestyle',
       component: GuideStyleView
     },
