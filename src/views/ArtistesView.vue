@@ -3,22 +3,47 @@
     <h1 class="font-display text-black text-3xl text-center">Les artistes</h1>
     <IconSun class="flex place-items-end -ml-5 mt-2"></IconSun>
   </div>
-  <RouterLink to="/createartiste">
-    <div class="flex justify-end mr-12 mt-4 mb-12">
-      <div
-        class="flex bg-yellow-300 border-black border-2 px-4 gap-4 items-center"
+  <div class="flex justify-center sm:gap-24 md:gap-64 xl:gap-xl mt-4 mb-12">
+    <div class="flex items-center mt-2">
+      <input
+        type="text"
+        class="border-black border-2 h-8 text-black uppercase font-serif pl-2"
+        v-model="filter"
+        placeholder="Recherchez un artiste"
+      />
+      <button
+        class="bg-red-500 border-black border-r-2 border-t-2 border-b-2 h-8"
+        type="button"
+        title="Recherche"
       >
-        <p class="font-serif text-black uppercase text-2xl">
-          Ajouter un artiste
-        </p>
-        <IconPlus class="stroke-4 w-5"></IconPlus>
-      </div>
+        <IconSearch class="w-12"></IconSearch>
+      </button>
     </div>
-  </RouterLink>
+
+    <RouterLink to="/createartiste">
+      <div class="flex justify-end mr-12">
+        <div
+          class="
+            flex
+            bg-yellow-300
+            border-black border-2
+            px-4
+            gap-4
+            items-center
+          "
+        >
+          <p class="font-serif text-black uppercase text-2xl">
+            Ajouter un artiste
+          </p>
+          <IconPlus class="stroke-4 w-5"></IconPlus>
+        </div>
+      </div>
+    </RouterLink>
+  </div>
   <div
     class="grid grid-cols-2 lg:grid-cols-3 gap-4 justify-center ml-4 mr-4 pb-6"
   >
-    <section v-for="artiste in listeArtiste" :key="artiste.id" class="mb-12">
+    <section v-for="artiste in filterByname" :key="artiste.id" class="mb-12">
       <div class="">
         <img
           :src="artiste.photo"
@@ -64,11 +89,11 @@
 </template>
 
 <script>
-import axios from "axios";
 import IconSun from "../components/icons/IconSun.vue";
 import IconPlus from "../components/icons/IconPlus.vue";
 import IconEdit from "../components/icons/IconEdit.vue";
 import IconTrash from "../components/icons/IconTrash.vue";
+import IconSearch from "../components/icons/IconSearch.vue";
 
 import {
   getFirestore,
@@ -92,6 +117,7 @@ import {
 export default {
   components: {
     IconPlus,
+    IconSearch,
     IconSun,
     IconEdit,
     IconTrash,
@@ -100,11 +126,35 @@ export default {
   data() {
     return {
       listeArtiste: [],
+      filter: "",
     };
   },
+
   mounted() {
     this.getArtiste();
   },
+  computed: {
+    orderByname: function () {
+      return this.listeArtiste.sort(function (a, b) {
+        if (a.nom.toLowerCase() < b.nom.toLowerCase()) return -1;
+        if (a.nom.toLowerCase() > b.nom.toLowerCase()) return 1;
+        return 0;
+      });
+    },
+
+    filterByname: function () {
+      if (this.filter.length > 0) {
+        let filter = this.filter.toLowerCase();
+
+        return this.orderByname.filter(function (artiste) {
+          return artiste.nom.toLowerCase().includes(filter);
+        });
+      } else {
+        return this.orderByname;
+      }
+    },
+  },
+
   methods: {
     async getArtiste() {
       const firestore = getFirestore();
