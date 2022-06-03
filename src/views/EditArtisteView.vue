@@ -130,6 +130,7 @@ import {
   getStorage,
   ref,
   getDownloadURL,
+  deleteObject,
   uploadString,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
@@ -153,23 +154,11 @@ export default {
   },
   mounted() {
     console.log("id artiste", this.$route.params.id);
-    this.artiste(this.$route.params.id);
-    this.getartiste();
+    //this.artiste(this.$route.params.id);
+    this.getartiste(this.$route.params.id);
   },
 
   methods: {
-    async getartiste() {
-      const firestore = getFirestore();
-      const dbartiste = collection(firestore, "artiste");
-      const q = query(dbartiste, orderBy("nom", "asc"));
-      await onSnapshot(q, (snapshot) => {
-        this.listeartiste = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-      });
-    },
-
     async getartiste(id) {
       const firestore = getFirestore();
       const docRef = doc(firestore, "artiste", id);
